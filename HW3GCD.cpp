@@ -21,18 +21,17 @@ int GCDFunc(long long int A, long long int B, int tgl){ //function for find the 
             GCD = B;
         }
     }
-    if (tgl == 0)
+    if (tgl == 0) //If statement for GCD
         cout << "The greatest common divisor of the two numbers is: " << GCD << "\n\n" << endl; //prints the GCD
-    else if (tgl == 1){
-        return A, B;
+    else if (tgl == 1){ //If statement for LCM
+        return GCD;
     }
 }
 
 void LCMFunc(long long int A, long long int B){ //function for Least Common Multiple
-    long long int LCM;
-    LCM = GCDFunc(A, B, 1);
-    LCM = (A * B) / LCM;
-    cout << "The least common multiple of " << A << " and " << B << " is: " << LCM << "\n" << endl;
+    double LCM;
+    LCM = (A * B) / GCDFunc(A, B, 1); //calculates the product of A and B divided by the GCD of A and B to find the LCM
+    cout << "The least common multiple of " << A << " and " << B << " is: " << LCM << "\n\n" << endl;
 }
 
 void MenuFunc(){ //menu function header
@@ -73,6 +72,5 @@ void MenuFunc(){ //menu function header
 
 int main(){
     MenuFunc(); //menu function call
-
 return 0;
 }
