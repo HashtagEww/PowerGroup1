@@ -22,32 +22,32 @@ void GCDFunc(long long int A, long long int B){ //function for find the GCD
             GCD = B;
         }
     }
-    cout << "The greatest common divisor of the two numbers is: " << GCD << "\n" << endl; //prints the GCD
+    cout << "The greatest common divisor of the two numbers is: " << GCD << "\n\n" << endl; //prints the GCD
 }
 
 void MenuFunc(){ //menu function header
 
-    long long int A = 0, B = 0;
+    long long int A = 0, B = 0, num = 0;
 
-    cout << "Input -1 to exit the program." << "\n" << endl;
+    while (num != -1){ //loops the program while A and B are not equal to -1
 
-    while (A != -1 && B != -1){ //loops the program while A and B are not equal to -1
-
-        cout << "Input the first non-negative, common divisor number: " << endl;
-        cin >> A; //gets a user input for A
-        if (A == -1){ //checks if A is equal to -1
-            cout << "\n";
-            break; //breaks the loop
-        }
-        cout << "Input the second non-negative, common divisor number: " << endl;
-        cin >> B; //gets a user input for B
-        if (B == -1){ //checks if B is equal to -1
-            cout << "\n";
-            break; //breaks the loop
-        }
+        cout << "Please enter a number from the list below to start: " << "\n" << endl;
+        cout << "1. Greatest Common Divisor." << endl;
+        cout << "2. Least Common Multiple." << "\n" << endl;
+        cout << "Input -1 to exit the program." << endl;
+        cin >> num;
         cout << "\n";
 
-        GCDFunc(A, B); //calls the GCD function
+        if (num == 1){
+
+            cout << "Input the first non-negative, common divisor number: " << endl;
+            cin >> A; //gets a user input for A
+            cout << "Input the second non-negative, common divisor number: " << endl;
+            cin >> B; //gets a user input for B
+            cout << "\n";
+
+            GCDFunc(A, B); //calls the GCD function
+        }
     }
     cout << "The program is now ending..." << endl; //end program statement
 }
